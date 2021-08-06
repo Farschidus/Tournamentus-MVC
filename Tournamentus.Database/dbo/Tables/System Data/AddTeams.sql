@@ -1,0 +1,37 @@
+print 'inserting into dbo.Teams'
+
+insert into dbo.Teams
+    (Team, Abbr, [Type], Federation)
+values
+    ('Egypt', 'Egt', 'National', 'FIFA'),
+    ('Morocco', 'Mrc', 'National', 'FIFA'),
+    ('Nigeria', 'Nig', 'National', 'FIFA'),
+    ('Senegal', 'Sng', 'National', 'FIFA'),
+    ('Tunisia', 'Tns', 'National', 'FIFA'),
+    ('Australia', 'Aus', 'National', 'FIFA'),
+    ('Iran', 'Irn', 'National', 'FIFA'),
+    ('Japan', 'Jap', 'National', 'FIFA'),
+    ('Korea Republic', 'Kor Rep', 'National', 'FIFA'),
+    ('Saudi Arabia', 'Sar', 'National', 'FIFA'),
+    ('Belgium', 'Bel', 'National', 'FIFA'),
+    ('Croatia', 'Cro', 'National', 'FIFA'),
+    ('Denmark', 'Den', 'National', 'FIFA'),
+    ('England', 'Eng', 'National', 'FIFA'),
+    ('France', 'Frn', 'National', 'FIFA'),
+    ('Germany', 'Ger', 'National', 'FIFA'),
+    ('Iceland', 'Ice', 'National', 'FIFA'),
+    ('Poland', 'Pol', 'National', 'FIFA'),
+    ('Portugal', 'Pot', 'National', 'FIFA'),
+    ('Russia', 'Rus', 'National', 'FIFA'),
+    ('Serbia', 'Ser', 'National', 'FIFA'),
+    ('Spain', 'Spn', 'National', 'FIFA'),
+    ('Sweden', 'Swe', 'National', 'FIFA'),
+    ('Switzerland', 'Swt', 'National', 'FIFA'),
+    ('Costa Rica', 'Cst', 'National', 'FIFA'),
+    ('Mexico', 'Mex', 'National', 'FIFA'),
+    ('Panama', 'Pan', 'National', 'FIFA'),
+    ('Argentina', 'Arg', 'National', 'FIFA'),
+    ('Brazil', 'Brz', 'National', 'FIFA'),
+    ('Colombia', 'Col', 'National', 'FIFA'),
+    ('Peru', 'Per', 'National', 'FIFA'),
+    ('Uruguay', 'Urg', 'National', 'FIFA')

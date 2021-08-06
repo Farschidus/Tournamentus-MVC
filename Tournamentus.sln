@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tournamentus.WebApp", "Tournamentus.WebApp\Tournamentus.WebApp.csproj", "{17FE3BAB-9C8C-4649-8E32-CB736D455515}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tournamentus.Core", "Tournamentus.Core\Tournamentus.Core.csproj", "{2838470F-C9BC-433E-B233-7FAC07CA75BC}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tournamentus.Database", "Tournamentus.Database\Tournamentus.Database.sqlproj", "{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5040960A-1B14-4341-A9A0-D2D1ED87940E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED34D2F7-6B81-403E-BF81-40750D059C46}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.prettierrc = .prettierrc
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17FE3BAB-9C8C-4649-8E32-CB736D455515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FE3BAB-9C8C-4649-8E32-CB736D455515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FE3BAB-9C8C-4649-8E32-CB736D455515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FE3BAB-9C8C-4649-8E32-CB736D455515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2838470F-C9BC-433E-B233-7FAC07CA75BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2838470F-C9BC-433E-B233-7FAC07CA75BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2838470F-C9BC-433E-B233-7FAC07CA75BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2838470F-C9BC-433E-B233-7FAC07CA75BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17FE3BAB-9C8C-4649-8E32-CB736D455515} = {5040960A-1B14-4341-A9A0-D2D1ED87940E}
+		{2838470F-C9BC-433E-B233-7FAC07CA75BC} = {5040960A-1B14-4341-A9A0-D2D1ED87940E}
+		{9BA7E5C9-E45C-4D6E-85F7-61572BABF8DF} = {5040960A-1B14-4341-A9A0-D2D1ED87940E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C41906C1-FD49-4B9A-AD16-3975C2CE779B}
+	EndGlobalSection
+EndGlobal
