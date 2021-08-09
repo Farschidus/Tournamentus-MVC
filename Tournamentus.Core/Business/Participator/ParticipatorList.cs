@@ -9,9 +9,9 @@ using Tournamentus.Core.Contracts;
 using Tournamentus.Core.Data;
 using Tournamentus.Core.Data.Identity;
 
-namespace Tournamentus.Core.Business.TournamentParticipator
+namespace Tournamentus.Core.Business.Participator
 {
-    public class TournamentParticipatorList
+    public class ParticipatorList
     {
         public class Query : IRequest<IResponseBase<QueryResult>>
         {
@@ -24,7 +24,7 @@ namespace Tournamentus.Core.Business.TournamentParticipator
 
         public class QueryResult
         {
-            public List<User> Participators { get; set; }
+            public List<User> Participators { get; set; } = new List<User>();
         }
 
         public class QueryHandler : AbstractHandler<Query, IResponseBase<QueryResult>>
@@ -39,9 +39,9 @@ namespace Tournamentus.Core.Business.TournamentParticipator
             public override async Task<IResponseBase<QueryResult>> Handle(Query message, CancellationToken cancellationToken)
             {
                 var result = new QueryResult();
-                var participators = await _db.TournamentParticipators
+                var participators = await _db.Participators
                     .Include(x => x.User)
-                    .Where(x => x.TournamentId == message.TournoumentId)
+                    .Where(x => x.ParticipatorTournamentId == message.TournoumentId)
                     .ToListAsync();
 
                 participators.ForEach(x => result.Participators.Add(new User

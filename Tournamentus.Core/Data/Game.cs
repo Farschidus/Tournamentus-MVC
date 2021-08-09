@@ -13,7 +13,7 @@ namespace Tournamentus.Core.Data
         public const int TimezoneIdMaxLength = 50;
 
         [Key]
-        public string GameId { get; set; }
+        public int GameId { get; set; }
         [Required]
         public int TournamentTeamIdA { get; set; }
         [Required]
@@ -35,17 +35,17 @@ namespace Tournamentus.Core.Data
         /// <summary>
         /// Child UserPredicts where [UserPredicts].[Game] point to this entity (FK_UserPredicts_Games)
         /// </summary>
-        public virtual ICollection<UserPredict> UserPredicts { get; set; }
+        public virtual ICollection<ParticipatorPredict> ParticipatorPredict { get; set; }
 
         // Foreign keys
         [ForeignKey("TournamentTeamIdA")]
-        public virtual Team TournamentTeamA { get; set; }
+        public virtual TournamentTeam TournamentTeamA { get; set; }
         [ForeignKey("TournamentTeamIdB")]
-        public virtual Team TournamentTeamB { get; set; }
+        public virtual TournamentTeam TournamentTeamB { get; set; }
         [ForeignKey("Stage")]
         public virtual Stage GamesStage { get; set; }
         [ForeignKey("Winner")]
-        public virtual Team WinnerTeam { get; set; }
+        public virtual TournamentTeam WinnerTeam { get; set; }
         [ForeignKey("TimezoneId")]
         public virtual Timezone Timezone { get; set; }
     }

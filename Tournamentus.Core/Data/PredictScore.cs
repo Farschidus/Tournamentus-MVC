@@ -9,7 +9,7 @@ namespace Tournamentus.Core.Data
         public const int TitleMaxLength = 50;
         public const int DescriptionMaxLength = 100;
 
-        [Key, Column("PredictScore"), Required]
+        [Key, Required, Column("PredictScore")]
         public byte Score { get; set; }
         [MaxLength(TitleMaxLength)]
         public string Title { get; set; }
@@ -20,6 +20,6 @@ namespace Tournamentus.Core.Data
         /// <summary>
         /// Child UserPredicts where [UserPredicts].[PredictScore] point to this entity (FK_UserPredicts_PredictScore)
         /// </summary>
-        public virtual ICollection<UserPredict> UserPredicts { get; set; }
+        public virtual ICollection<ParticipatorPredict> UserPredicts { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-using Tournamentus.Core.Business.TournamentParticipator;
-using Tournamentus.WebApp.Extensions;
+using Tournamentus.Core.Business.Participator;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -16,14 +15,9 @@ namespace Tournamentus.WebApp.Features.Home
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(TournamentParticipatorList.Query query)
+        public async Task<IActionResult> Index(ParticipatorList.Query query)
         {
             var response = await _mediator.Send(query);
-            if (Request.IsAjaxRequest())
-            {
-                return PartialView("_ParticipatorList", response.Result);
-            }
-
             return View(response.Result);
         }
     }

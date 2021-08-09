@@ -25,7 +25,7 @@ namespace Tournamentus.Core.Data
         /// <summary>
         /// Child TournamentParticipators where [TournamentParticipators].[TournamentId] point to this entity (FK_TournamentParticipators_Tournaments)
         /// </summary>
-        public virtual ICollection<TournamentParticipator> TournamentParticipators { get; set; }
+        public virtual ICollection<Participator> TournamentParticipators { get; set; }
         /// <summary>
         /// Child TournamentTeams where [TournamentTeams].[TournamentId] point to this entity (FK_TournamentTeams_Tournoments)
         /// </summary>

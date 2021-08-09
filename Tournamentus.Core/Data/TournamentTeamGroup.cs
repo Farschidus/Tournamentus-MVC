@@ -8,7 +8,7 @@ namespace Tournamentus.Core.Data
     {
         public const int GroupMaxLength = 50;
 
-        [Required]
+        [Key, Required]
         public int TournamentTeamId { get; set; }
         [Required, MaxLength(GroupMaxLength)]
         public string Group { get; set; }

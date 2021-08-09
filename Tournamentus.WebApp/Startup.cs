@@ -4,6 +4,7 @@ using Tournamentus.Core.Infrastructure;
 using Tournamentus.WebApp.Extensions;
 using Tournamentus.WebApp.Infrastructure;
 using Tournamentus.WebApp.Providers;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
 using System;
+using Lamar;
+using Tournamentus.Core.Contracts;
+using FluentValidation;
+using MediatR.Pipeline;
+using Tournamentus.Core.Business.Participator;
 
 namespace Tournamentus.WebApp
 {
@@ -28,9 +34,34 @@ namespace Tournamentus.WebApp
         public IWebHostEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureContainer(ServiceRegistry services)
         {
             var settings = CreateSettings();
+
+            services.AddScoped<IMediator, Mediator>();
+
+            services.Scan(scanner =>
+            {
+                scanner.AssembliesAndExecutablesFromApplicationBaseDirectory(assembly => assembly.FullName.StartsWith("Tournamentus"));
+                scanner.Assembly("Tournamentus.Core");
+                scanner.WithDefaultConventions();
+            });
+
+            services.AddSingleton<IResponseBase, ResponseBase>();
+            services.AddSingleton(typeof(IResponseBase<>), typeof(ResponseBase<>));
+
+            services.AddScoped<ServiceFactory>(ctx => ctx.GetService);
+
+            // mediator and its pipeline
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationPipeline<,>));
+            services.AddScoped<IValidator<ParticipatorList.Query>, ParticipatorList.QueryValidator>();
+            services.AddMediatR(typeof(IResponseBase<>));
+            services.AddMediatR(typeof(IValidator<>));
+            services.AddMediatR(typeof(AbstractHandler<,>));
+            services.AddMediatR(typeof(AbstractHandler<>));
+
+            services.AddSingleton(_ => settings.ConnectionStrings);
+            services.AddTransient<TournamentusDb>();
 
             services.AddDbContext<TournamentusDb>(options =>
             {
